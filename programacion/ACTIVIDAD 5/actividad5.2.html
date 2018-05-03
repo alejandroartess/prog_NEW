@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Listado de usuarios</title>
+  </head>
+  <body>
+    <a href="insertarUsuario.php">Añadir nuevo usuario</a>
+<?php
+//Conexion con la base de datos.
+$conector=new mysqli ("localhost","root","","proyecto5");
+if ($conector-> connect_errno) {
+  echo "Fallo al conectar a MySQL: ".$conector->connect_errno;
+}
+else {
+  $nombre=$_POST['nombre'];
+  $apellidos=$_POST['apellidos'];
+  $edad=$_POST['edad'];
+  $curso=$_POST['curso'];
+  $correo=$_POST['correo'];
+//Consulta.
+  $consulta="INSERT INTO usuarios (nombre,apellidos,edad,curso,correo) values ('$nombre','$apellidos',$edad,$curso,'$correo')";
+
+$insert=$conector->query($consulta);
+$resultado=$conector->query($consulta ="SELECT * from usuarios");
+//Salida por pantalla de la consulta.
+foreach ($resultado as $fila) {
+  echo"<br>Id: ".$fila["id"];
+  echo"<br>Nombre: ".$fila["nombre"];
+  echo"<br>Apellidos: ".$fila["apellidos"];
+  echo"<br>Edad: ".$fila["edad"];
+  echo"<br>Curso: ".$fila["curso"];
+  echo"<br>Puntuación: ".$fila["puntuacion"];
+  echo "<br>Correo: ".$fila["correo"];
+  echo"<br>";
+  }
+}
+ ?>
+  </body>
+</html>

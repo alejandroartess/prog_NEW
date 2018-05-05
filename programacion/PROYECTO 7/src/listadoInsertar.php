@@ -8,15 +8,12 @@
     <?php
     include '../modelo/conexion.php';
     include '../modelo/crud_database.php';
-
-        $nombre=$_POST['nombre'];
-        $apellidos=$_POST['apellidos'];
-        $edad=$_POST['edad'];
-        $curso=$_POST['curso'];
-        $puntuacion=$_POST['puntuacion'];
-
-        $user = new User($nombre,$apellidos,$edad,$curso,$puntuacion);
-        var $crudDB_object= new crud_database();
+    include '../modelo/user.php';
+        
+        //Podemos pasar como parametros del objeto User los valores del POST, asi que podemos eliminar las variables que teniamos antes y
+        //dejamos el codigo mas limpio.
+        $user = new User($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['puntuacion']);
+        $crudDB_object= new crud_database($conector);
         $resultado=$crudDB_object->insertUser($user);
 
      foreach ($resultado as $fila) {
@@ -25,9 +22,6 @@
         echo "<a href='actualizarUsuario.php?id=".$fila['id']."'> Actualizar</a> <br>";
         echo "<a href='borrarUsuario.php?id=".$fila['id']."'> Borrar</a> <br> <br>";
       }
-    
-
-    insert($user)
      ?>
   </body>
 </html>

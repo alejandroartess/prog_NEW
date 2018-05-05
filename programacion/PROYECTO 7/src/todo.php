@@ -1,3 +1,7 @@
+<?php
+  include '../modelo/conexion.php';
+  include '../modelo/crud_database.php';
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,17 +13,14 @@
   <h1><font color="black">LISTADO USUARIOS</font></h1>
     <a href="insertarUsuario.php">INSERTAR USUARIO</a>
     <?php
-    $conector = new mysqli("localhost", "root", "", "juegos");
-      if ($conector->connect_errno) {
-        echo "Fallo al conectar a MySQL: " . $conector->connect_error;
-      } else {
-     $resultado = $conector->query("SELECT * FROM usuarios");
+    $gestor= new crud_database($conector);
+    $resultado = $gestor->getAllUsers();
      foreach ($resultado as $fila) {
+        echo "</br>";
         echo "<strong>Usuario</strong> ".$fila['id']."<br>"."<strong>Nombre: </strong>".$fila['nombre']."<br>"."<strong>Apellidos: </strong>".$fila['apellidos']."<br>"."<strong>Edad: </strong>".$fila['edad']."<br>"."<strong>Curso: </strong>".$fila['curso']."<br>"."<strong>Puntuacion: </strong>".$fila['puntuacion']."<br>";
         echo "<a href='actualizarUsuario.php?id=".$fila['id']."'> Actualizar</a> <br>";
         echo "<a href='borrarUsuario.php?id=".$fila['id']."'> Borrar</a> <br> <br>";
       }
-    }
      ?>
   </body>
 </html>

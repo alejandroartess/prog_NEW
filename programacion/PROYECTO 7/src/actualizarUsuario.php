@@ -7,9 +7,7 @@
 </head>
 <body style="background-color:#EEE8AA;">
 <h1><font color="black">ACTUALIZAR USUARIO</font></h1>
-<?php
-include '../modelo/conexion.php';
-?>
+<!-- aqui importabas el conexion.php    . Te lo he quitado porque asi no sirve para nada-->
   <script src="validar.js" charset="utf-8"></script>
     <form action="listadoActualizar.php" method="post" onsubmit="return validar()">
       <input type="text" id="nombre" name="nombre" placeholder="Nombre">

@@ -9,10 +9,12 @@ class User {
     var $puntuacion;
 
     function User($nombre,$apellidos,$edad,$curso,$puntuacion){
-
-    }
-    function getNombreCompleto(){
-        return "".$this->nombre" - ".$this->apellido".";
+        //aqui te faltaba guardar los parametros que le llegan al constructor en el objeto, sino se crea un objeto vacio
+        $this->nombre=$nombre;
+        $this->apellidos=$apellidos;
+        $this->edad=$edad;
+        $this->curso=$curso;
+        $this->puntuacion=$puntuacion;
     }
 
     /**
@@ -129,9 +131,3 @@ class User {
     }
 }
 ?>
-
-
-
-
-$user2->setId(4)
-$user->setId(2)

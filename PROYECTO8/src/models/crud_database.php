@@ -1,5 +1,5 @@
 <?php
-namespace modelo;
+namespace florida;
     class crud_database {
         var $conector;
 
@@ -21,7 +21,7 @@ namespace modelo;
         }
 
         function getAllUsers(){
-            
+
             $allUser = $this->conector->query("SELECT * FROM usuarios");
             return $allUser;
         }

@@ -1,5 +1,5 @@
 <?php
-namespace modelo;
+namespace florida;
 class User {
 
     var $id;
@@ -19,7 +19,7 @@ class User {
 
     /**
      * Get the value of id
-     */ 
+     */
     public function getId()
     {
         return $this->id;
@@ -28,8 +28,8 @@ class User {
     /**
      * Set the value of id
      *
-     * 
-     */ 
+     *
+     */
     public function setId($id)
     {
         $this->id = $id;
@@ -37,7 +37,7 @@ class User {
 
     /**
      * Get the value of nombre
-     */ 
+     */
     public function getNombre()
     {
         return $this->nombre;
@@ -46,8 +46,8 @@ class User {
     /**
      * Set the value of nombre
      *
-     * 
-     */ 
+     *
+     */
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
@@ -56,7 +56,7 @@ class User {
 
     /**
      * Get the value of apellidos
-     */ 
+     */
     public function getApellidos()
     {
         return $this->apellidos;
@@ -66,17 +66,17 @@ class User {
      * Set the value of apellidos
      *
      *
-     */ 
+     */
     public function setApellidos($apellidos)
     {
         $this->apellidos = $apellidos;
 
-       
+
     }
 
     /**
      * Get the value of edad
-     */ 
+     */
     public function getEdad()
     {
         return $this->edad;
@@ -85,8 +85,8 @@ class User {
     /**
      * Set the value of edad
      *
-     * 
-     */ 
+     *
+     */
     public function setEdad($edad)
     {
         $this->edad = $edad;
@@ -94,7 +94,7 @@ class User {
 
     /**
      * Get the value of curso
-     */ 
+     */
     public function getCurso()
     {
         return $this->curso;
@@ -104,7 +104,7 @@ class User {
      * Set the value of curso
      *
      *
-     */ 
+     */
     public function setCurso($curso)
     {
         $this->curso = $curso;
@@ -113,7 +113,7 @@ class User {
 
     /**
      * Get the value of puntuacion
-     */ 
+     */
     public function getPuntuacion()
     {
         return $this->puntuacion;
@@ -122,8 +122,8 @@ class User {
     /**
      * Set the value of puntuacion
      *
-     * 
-     */ 
+     *
+     */
     public function setPuntuacion($puntuacion)
     {
         $this->puntuacion = $puntuacion;

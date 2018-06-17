@@ -7,15 +7,12 @@
   <body style="background-color:#EEE8AA;">
   <h1><font color="black">LISTADO USUARIOS</font></h1>
     <?php
-    include '../modelo/conexion.php';
-    include '../modelo/crud_database.php';
-    include '../modelo/User.php';
         //lo mismo que el insertar, si quitamos las variables que nos creamos para recoger los parametros,
         //le podemos pasar al constructor del objeto los valores que sacamos directamente del POST.
 
         $gestor= new crud_database($conector);
         $user= new User($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['puntuacion']);
-        $user->setId($_POST['id']);//si recuerdas, en la clase User, cuando definimos el constructor le pasamos todos los parametros menos el Id,asi que cuando 
+        $user->setId($_POST['id']);//si recuerdas, en la clase User, cuando definimos el constructor le pasamos todos los parametros menos el Id,asi que cuando
         //necesitemos pasarle el id, tenemos el metodo setId .
         //si lo ves mas claro puedes cambiar el constructor y pasarle simpre el Id.Por ejemplo en el insert que todavia no lo tienes le puedes pasar 0.
         //si no te queda claro te lo explico el proximo dia

@@ -1,10 +1,9 @@
 <?php
-  //include '../models/conexion.php';
 
-  use modelo\crud_database as crud_database;
-  include '../src/models/crud_database.php';
-  
-  
+require_once '../vendor/autoload.php';
+require_once '../src/models/crud_database.php';
+use florida\crud_database;
+
 ?>
 <!DOCTYPE html>
 <html>

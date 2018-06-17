@@ -1,10 +1,6 @@
 <?php
-  //include '../models/conexion.php';
 
-  use modelo\crud_database as crud_database;
-  include '../models/crud_database.php';
-  
-  
+
 ?>
 <!DOCTYPE html>
 <html>

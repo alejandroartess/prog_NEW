@@ -6,17 +6,15 @@
   </head>
   <body style="background-color:#EEE8AA;">
     <?php
-      use modelo\crud_database as crud_database;
-      use modelo\User as User;
-      include '../models/crud_database.php';
-      include '../models/User.php';
-    
-        
+      use florida\crud_database as crud_database;
+      use florida\User as User;
+
+
         //Podemos pasar como parametros del objeto User los valores del POST, asi que podemos eliminar las variables que teniamos antes y
         //dejamos el codigo mas limpio.
         $user = new User($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['puntuacion']);
         $crudDB_object= new crud_database();
-        
+
         $resultado=$crudDB_object->insertUser($user);
 
      foreach ($resultado as $fila) {

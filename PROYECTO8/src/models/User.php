@@ -1,5 +1,5 @@
 <?php
-namespace florida;
+namespace florida\models;
 class User {
 
     var $id;

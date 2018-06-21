@@ -1,9 +1,11 @@
 {
-    "require": {
-        "monolog/monolog": "^1.23",
-        "aura/autoload": "^2.0"
-    },
-    "autoload": {
-        "psr-4": {"florida\\": "src/"}
-    }
+	"name": "p8/composer",
+	"require": {
+		"monolog/monolog": ">=1.23"
+	},
+	"autoload": {
+		"psr-4": {
+			"florida\\":"src/"
+		}
+	}
 }

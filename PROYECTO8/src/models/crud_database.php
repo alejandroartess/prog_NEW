@@ -1,6 +1,6 @@
 <?php
-namespace florida;
-    class crud_database {
+namespace florida\models;
+    class Crud_database {
         var $conector;
 
         function __construct(){

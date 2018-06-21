@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__.'/../../vendor/autoload.php';
+use florida\models\Crud_database;
+use florida\models\User;
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +14,7 @@
     <?php
 
         //aqui no hace falta crear un objeto user porque al metodo de borrar solo tenemos que pasarle un id como parametro.
-        $crudDB_object= new crud_database($conector);
+        $crudDB_object= new Crud_database();
         $resultado=$crudDB_object->deleteUser($_POST['id']);
 
       foreach ($resultado as $fila) {

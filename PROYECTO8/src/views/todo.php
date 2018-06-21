@@ -1,5 +1,6 @@
 <?php
-
+require_once __DIR__.'/../../vendor/autoload.php';
+use florida\models\Crud_database;
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +14,7 @@
   <h1><font color="black">LISTADO USUARIOS</font></h1>
     <a href="insertarUsuario.php">INSERTAR USUARIO</a>
     <?php
-    $gestor= new crud_database();
+    $gestor= new Crud_database();
     $resultado = $gestor->getAllUsers();
      foreach ($resultado as $fila) {
         echo "</br>";
